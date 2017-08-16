@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Show all user</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div >
+    <table class="table">
+
+        <thead>
+       <tr>
+           <th>id</th>
+           <th>name</th>
+           <th>date</th>
+       </tr>
+        </thead>
+
+        <tr th:each="user  : ${userList}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.formattedRegisterDate}"></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>
