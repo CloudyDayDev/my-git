@@ -2,11 +2,18 @@ package com.example.world.hello;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class HelloWorldApplication {
+public class HelloWorldApplication  extends SpringBootServletInitializer{
 
-	public static void main(String[] args) {
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(HelloWorldApplication.class);
+	}
+
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(HelloWorldApplication.class, args);
 	}
 }
